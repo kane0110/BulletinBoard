@@ -34,11 +34,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><a href="#"><!-- タイトル --></a></td>
-                <td><!-- レス数 --></td>
-                <td><!-- 作成日時 --></td>
-              </tr>
+              @foreach($threads as $thread)
+                <tr>
+                  <td>
+                    <a href="{{ route('responses.index', ['id' => $thread->id]) }}">
+                      {{$thread->title}}
+                    </a>
+                  </td>
+                  <td>{{$thread->num_res}}</td>
+                  <td>{{$thread->created_at}}</td>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

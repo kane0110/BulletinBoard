@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResponsesController;
+use App\Http\Controllers\ThreadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/threads', [ThreadsController::class, 'index']);
+Route::get('/threads/{id}/responses', [ResponsesController::class, 'index'])->name('responses.index');
