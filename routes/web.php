@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('/threads', [ThreadsController::class, 'index']);
 Route::get('/threads/{id}/responses', [ResponsesController::class, 'index'])->name('responses.index');
+Route::get('/threads/create', [ThreadsController::class, 'showCreateForm'])->name('thread.create');
+Route::post('/threads/create', [ThreadsController::class, 'create']);
