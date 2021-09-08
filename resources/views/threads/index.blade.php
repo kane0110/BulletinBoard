@@ -20,7 +20,7 @@
           <div class="panel-heading">スレッズ</div>
           <div class="panel-body">
             <div class="text-right">
-              <a href="#" class="btn btn-default btn-block">
+              <a href="{{route('thread.create')}}" class="btn btn-default btn-block">
                 スレッドを追加する
               </a>
             </div>
