@@ -20,7 +20,7 @@
               @csrf
               <div class="form-group">
                 <label for="title">Thread Title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="スレッドタイトルを入力" />
+                <input type="text" class="form-control" name="title" id="title" value="{{old('title')}}" placeholder="スレッドタイトルを入力" />
               </div>
               <div class="form-group">
                 <label for="title">First Comment</label>
