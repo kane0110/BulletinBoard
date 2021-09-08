@@ -34,6 +34,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- スレッドを一覧表示 -->
               @foreach($threads as $thread)
                 <tr>
                   <td>

@@ -8,8 +8,10 @@ use App\Http\Requests\CreateThread;
 
 class ThreadsController extends Controller
 {
+    // スレッド一覧表示
     public function index()
     {
+      // スレッドテーブルから全取得してviewに渡す
       $threads = Thread::all();
 
       return view('threads/index', [
@@ -17,11 +19,13 @@ class ThreadsController extends Controller
       ]);
     }
 
+    // スレッド作成画面表示
     public function showCreateForm()
     {
       return view('threads/create');
     }
 
+    // 新しいスレッドの作成
     public function create(CreateThread $request)
     {
       $thread = new Thread();

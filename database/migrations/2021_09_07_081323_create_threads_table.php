@@ -11,10 +11,13 @@ class CreateThreadsTable extends Migration
      *
      * @return void
      */
+    // スレッドテーブルを定義
     public function up()
     {
         Schema::create('threads', function (Blueprint $table) {
+            // idは連番で自動決定
             $table->increments('id');
+            // レス数はデフォルトで０（スレッドのidと紐づいたレスポンスの数に更新する予定）
             $table->integer('num_res')->default('0');
             $table->string('title', 30);
             $table->timestamps();

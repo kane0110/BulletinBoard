@@ -24,10 +24,12 @@ class CreateThread extends FormRequest
     public function rules()
     {
         return [
+            // 'title'に必須入力と30文字の制限を追加
             'title' => 'required|max:30',
         ];
     }
 
+    // リクエストエラー時の':attribute'の設定（\resources\lang\jp\validation.php）
     public function attributes()
     {
       return [

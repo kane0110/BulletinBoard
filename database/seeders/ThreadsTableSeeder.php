@@ -13,6 +13,8 @@ class ThreadsTableSeeder extends Seeder
      *
      * @return void
      */
+
+    // スレッドテーブルにテストデータを挿入
     public function run()
     {
         $titles = ['Test Thread 1', 'Test Thread 2', 'Test Thread 3'];

@@ -7,6 +7,7 @@
         <nav class="panel panel-default">
           <div class="panel-heading">New Thread</div>
           <div class="panel-body">
+            <!-- エラー発生時、エラーメッセージを表示 -->
             @if($errors->any())
               <div class="alert alert-danger">
                 <ul>
