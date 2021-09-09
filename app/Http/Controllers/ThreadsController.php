@@ -4,18 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thread;
+use App\Models\Category;
 use App\Http\Requests\CreateThread;
 
 class ThreadsController extends Controller
 {
     // スレッド一覧表示
-    public function index()
+    public function index(int $id)
     {
-      // スレッドテーブルから全取得してviewに渡す
-      $threads = Thread::all();
+      // 現在のカテゴリーのデータを取得
+      $current_category = Category::Find($id);
 
-      return view('threads/index', [
+      // スレッドテーブルから'current_category'と紐づいたデータだけ抽出
+      $threads = $current_category->thread;
+
+      // カテゴリーテーブルからデータを全取得
+      $categories = Category::all();
+
+      return view('/threads/index', [
         'threads' => $threads,
+        'categories' => $categories,
       ]);
     }
 
@@ -32,6 +40,6 @@ class ThreadsController extends Controller
       $thread->title = $request->title;
       $thread->save();
 
-      return redirect('/threads');
+      return redirect('/threads/all');
     }
 }

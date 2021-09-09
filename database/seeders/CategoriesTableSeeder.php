@@ -17,13 +17,11 @@ class CategoriesTableSeeder extends Seeder
     // カテゴリーテーブルにテストデータを挿入
     public function run()
     {
-      $id = ['genre1', 'genre2', 'genre3'];
-      $titles = ['ジャンル１', 'ジャンル２', 'ジャンル３'];
+      $names = ['すべて', 'ジャンル１', 'ジャンル２', 'ジャンル３'];
 
-      foreach ($titles as $index => $title) {
+      foreach ($names as $name) {
           DB::table('categories')->insert([
-              'id' => $id[$index],
-              'title' => $title,
+              'name' => $name,
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now(),
           ]);

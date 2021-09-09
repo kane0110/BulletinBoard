@@ -17,7 +17,7 @@
                 </ul>
               </div>
             @endif
-            <form action="{{route('thread.create')}}" method="POST">
+            <form action="{{route('threads.create')}}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="title">Thread Title</label>
