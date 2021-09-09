@@ -9,8 +9,8 @@ use App\Http\Requests\CreateThread;
 
 class ThreadsController extends Controller
 {
-    // スレッド一覧表示
-    public function index(int $id)
+    // カテゴリーに応じたスレッド一覧表示
+    public function index(int $id) // カテゴリーの'id'
     {
       // 現在のカテゴリーのデータを取得
       $current_category = Category::Find($id);

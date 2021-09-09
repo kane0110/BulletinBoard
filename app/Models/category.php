@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    // 紐づいたスレッドのリストを取得
     public function thread()
     {
+      // 中間テーブル'threads_categories'を用いて'Thread'モデルと紐づけ
       return $this->belongsToMany('App\Models\Thread', 'threads_categories');
     }
 }
