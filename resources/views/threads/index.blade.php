@@ -8,9 +8,11 @@
           <div class="panel-heading">ジャンル</div>
           <div class="panel-body">
             <div class="list-group">
-              <a href="#" class="list-group-item">
-                <!-- ジャンル一覧 -->
-              </a>
+              @foreach($categories as $category)
+                <a href="{{ route('threads.index', ['id' => $category->id]) }}" class="list-group-item">
+                  {{$category->name}}
+                </a>
+              @endforeach
             </div>
           </div>
         </nav>
@@ -20,7 +22,7 @@
           <div class="panel-heading">スレッズ</div>
           <div class="panel-body">
             <div class="text-right">
-              <a href="{{route('thread.create')}}" class="btn btn-default btn-block">
+              <a href="{{route('threads.create')}}" class="btn btn-default btn-block">
                 スレッドを追加する
               </a>
             </div>
@@ -34,6 +36,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- スレッドを一覧表示 -->
               @foreach($threads as $thread)
                 <tr>
                   <td>

@@ -13,15 +13,13 @@ class ThreadsTableSeeder extends Seeder
      *
      * @return void
      */
+
+    // スレッドテーブルにテストデータを挿入
     public function run()
     {
-        $titles = ['Test Thread 1', 'Test Thread 2', 'Test Thread 3'];
-        $num_res = [0, 1, 2];
-
-        foreach ($titles as $index => $title) {
+        foreach (range(1, 10) as $num) {
             DB::table('threads')->insert([
-                'title' => $title,
-                'num_res' => $num_res[$index],
+                'title' => "Test Thread {$num}",
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

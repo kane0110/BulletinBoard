@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/threads', [ThreadsController::class, 'index']);
+Route::get('/categories/{id}/threads', [ThreadsController::class, 'index'])->name('threads.index');
 Route::get('/threads/{id}/responses', [ResponsesController::class, 'index'])->name('responses.index');
-Route::get('/threads/create', [ThreadsController::class, 'showCreateForm'])->name('thread.create');
+Route::get('/threads/create', [ThreadsController::class, 'showCreateForm'])->name('threads.create');
 Route::post('/threads/create', [ThreadsController::class, 'create']);

@@ -7,6 +7,7 @@
         <nav class="panel panel-default">
           <div class="panel-heading">New Thread</div>
           <div class="panel-body">
+            <!-- エラー発生時、エラーメッセージを表示 -->
             @if($errors->any())
               <div class="alert alert-danger">
                 <ul>
@@ -16,7 +17,7 @@
                 </ul>
               </div>
             @endif
-            <form action="{{route('thread.create')}}" method="POST">
+            <form action="{{route('threads.create')}}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="title">Thread Title</label>
